@@ -1,0 +1,5 @@
+package in.ashokit.Repository;
+
+public class CouncellorRepository {
+
+}
