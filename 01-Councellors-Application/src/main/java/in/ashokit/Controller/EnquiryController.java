@@ -69,7 +69,7 @@ public class EnquiryController {
 	@GetMapping("/edit/{enqId}")
 	public String editEnquiry(@PathVariable(name="enqId") Integer enqId, Model model) {
 		Enquiry enquiry = enqService.getEnquiry(enqId);
-		model.addAttribute("enq", enquiry);
+		model.addAttribute("Enquiry", enquiry);
 
 		return "addEnq";
 

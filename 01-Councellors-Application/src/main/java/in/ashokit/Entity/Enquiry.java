@@ -16,6 +16,7 @@ import jakarta.persistence.ManyToOne;
 @Entity
 public class Enquiry {
 	@Id
+	
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer enqID;
 	private String stuName;

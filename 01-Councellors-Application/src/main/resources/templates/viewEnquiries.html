@@ -64,7 +64,7 @@
 					<td th:text="${enq.course}" />
 					<td th:text="${enq.status}" />
 					<td>
-						<a href="@{'/edit/'+ ${enq.enqID}}">Edit</a>
+						<a th:href="@{'/edit/'+ ${enq.enqID}}">Edit</a>
 					</td>
 				</tr>
 			</tbody>
