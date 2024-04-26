@@ -48,9 +48,24 @@ public class EnquiryImpl implements EnquiryService {
 
 	@Override
 	public List<Enquiry> getEnquiries(Enquiry enquiry, Integer councellorId) {
-		Councellor councellor = councellorRepo.findById(councellorId).orElseThrow();
-		enquiry.setCouncellor(councellor);
-		Example<Enquiry> of = Example.of(enquiry);
+		Councellor councellor = new Councellor();
+		councellor.setCouncellorId(councellorId);
+
+		Enquiry searchCriteria = new Enquiry();
+		searchCriteria.setCouncellor(councellor);
+
+		if ( null!=enquiry.getCourse() && !"".equals(enquiry.getCourse())) {
+			searchCriteria.setCourse(enquiry.getCourse());
+		}
+
+		if (  null!=enquiry.getMode() && !"".equals(enquiry.getMode())) {
+			searchCriteria.setMode(enquiry.getMode());
+		}
+		if ( null!=enquiry.getStatus() && !"".equals(enquiry.getStatus())) {
+			searchCriteria.setStatus(enquiry.getStatus());
+		}
+
+		Example<Enquiry> of = Example.of(searchCriteria);
 
 		return enqRepo.findAll(of);
 	}
