@@ -1,5 +1,0 @@
-package in.ashokit.Repository;
-
-public interface EnquiryRepository {
-
-}
